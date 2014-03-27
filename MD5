@@ -1,0 +1,15 @@
+adf0b0ca645c7522a97997d332160275 *DESCRIPTION
+7f5e9fdcecdad12f9378f61e3b16ae41 *LICENSE
+50078796c6c22026ad9255f7dcab31da *NAMESPACE
+921fdf93d81e6d44150a531e39578c26 *R/cost01.R
+36cde430024882a7d93e7171f3f44934 *R/costmse.R
+9204465af7fadcdbb9bc53b4abc46dbc *R/cvwork.R
+3b8b7748d34f865db86c88b5a0d5d255 *R/fakedata.R
+4c4dd942ab8a7404ae7289309241d29c *R/freestats-package.R
+8a2bce0ef4a2351aa993d522f5921cd8 *R/perceptrain.R
+b870bd3e9a1b7bed995cb47109b0ee59 *man/cost.01.Rd
+b3e0367f1c251925af1b479ad2673d45 *man/cost.mse.Rd
+c062d86d23184b8a9f5946e7ffadd9bd *man/cv.work.Rd
+4f4506c877e51d6f554ad2187597e02f *man/fakedata.Rd
+332657b563781c48087e0725be82353b *man/freestats.Rd
+13a0c6ad2e39446b1e3dcff04ab8654b *man/perceptrain.Rd
