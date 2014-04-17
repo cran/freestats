@@ -1,6 +1,6 @@
 \name{cv.work}
 \alias{cv.work}
-\title{k-fold cross validation}
+\title{K-fold cross validation}
 \usage{
 cv.work(fun, k = 5, data, cost, response = "y", ...)
 }
@@ -26,9 +26,11 @@ A single cross-validated error
 Calculate cross-validation error
 }
 \examples{
-data(diamonds)
-dat <- diamonds[1:1000,]
-cv.work(fun=lm,k=5,data=dat,cost=cost.mse,response='price',formula=price~carat)
+set.seed(188)
+X <- rnorm(n=100,mean=3,sd=2)
+y <- rnorm(100) + X
+dat <- data.frame(y=y,X=X)
+cv.work(fun=lm,k=5,data=dat,cost=cost.mse,response='y',formula=y~X)
 }
 \author{
 Xiaoyao Yang

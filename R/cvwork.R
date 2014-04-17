@@ -1,8 +1,7 @@
 
-#' @title k-fold cross validation
+#' @title K-fold cross validation
 #' @description Calculate cross-validation error
 #' @export cv.work
-#' @import ggplot2
 #' @return A single cross-validated error
 #' @author Xiaoyao Yang
 #' @param fun The model function to call on the data
@@ -13,9 +12,11 @@
 #' @param \dots Extra arguments for model function
 #' @examples
 #' 
-#' data(diamonds)
-#' dat <- diamonds[1:1000,]
-#' cv.work(fun=lm,k=5,data=dat,cost=cost.mse,response='price',formula=price~carat)
+#' set.seed(188)
+#'X <- rnorm(n=100,mean=3,sd=2)
+#'y <- rnorm(100) + X
+#'dat <- data.frame(y=y,X=X)
+#'cv.work(fun=lm,k=5,data=dat,cost=cost.mse,response='y',formula=y~X)
 #' 
 cv.work <- function(fun,k=5,data,cost,response='y', ...)
 {

@@ -16,12 +16,18 @@ perceptrain(S, y, alpha_k = 1, endcost = 0)
   function}
 }
 \value{
-\item{z}{normal vector of a hyperplane}
-\item{Z_history}{Normal History vector of a hyperplane}
-\item{NumofIteration}{Number of iterations for algorithm}
+\item{z}{Normal vector of a hyperplane}
+\item{Z_history}{Trajactory of normal vector of a
+hyperplane} \item{NumofIteration}{Number of iterations for
+algorithm}
 }
 \description{
 Train data with perceptron algorithm
+}
+\details{
+S is especially designed for perceptron.
+
+For more information \code{\link{fakedata}}
 }
 \examples{
 set.seed(1024)

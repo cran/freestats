@@ -2,10 +2,14 @@
 #' @title An original perceptron algorithm
 #' @description Train data with perceptron algorithm
 #' @export perceptrain
-#' @return \item{z}{normal vector of a hyperplane}
-#' \item{Z_history}{Normal History vector of a hyperplane}
+#' @return \item{z}{Normal vector of a hyperplane}
+#' \item{Z_history}{Trajactory of normal vector of a hyperplane}
 #' \item{NumofIteration}{Number of iterations for algorithm}
 #' @author Xiaoyao Yang
+#' @details 
+#' S is especially designed for perceptron.
+#' 
+#' For more information \code{\link{fakedata}}
 #' @param S Each row represents a data points with last column equal to 1; S=[X,1]
 #' @param y Class label for data points in S
 #' @param alpha_k The speed of converge
@@ -30,7 +34,7 @@ perceptrain<-function(S,y,alpha_k=1,endcost=0){
     NumofIteration=0
     Cost.gradient=1000
     while (sum(Cost.gradient^2) > endcost){
-        index1 <- classify(S,z)!=y
+        index1 <- classify.pti(S,z)!=y
         x.matrix -> cost.temp
         for (i in 1:n){
             cost.temp[,i] <- index1[i]*x.matrix[,i]*(-y[i])
@@ -40,10 +44,12 @@ perceptrain<-function(S,y,alpha_k=1,endcost=0){
         z <- z - alpha_k*Cost.gradient
         NumofIteration <- NumofIteration + 1
     }
-    return(list(z=z,Z_history=Z_history,NumofIteration=NumofIteration))
+    res <- list(z=z,Z_history=Z_history,NumofIteration=NumofIteration)
+    class(res) <- 'pt'
+    return(res)
 }
 
-classify<-function(S,z){
+classify.pti<-function(S,z){
     #z<-c(-c,Vh) x<-c(x,1)
     d<-length(z)-1;
     yy<-as.vector(sign(z%*%rbind(1,t(S)[1:d,])))
