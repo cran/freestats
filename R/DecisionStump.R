@@ -1,13 +1,13 @@
 
 #' @title Decision Stump Algorithm
 #' @description Do classification with tree method in one step
-#' @export DecisionStump
+#' @export decisionStump
 #' @return \item{j}{The best dimention to cut the tree}
 #' \item{theta}{Value that seperate tree in the best dimention}
 #' \item{m}{the routine label value (for now only 1)}
 #' @author Xiaoyao Yang
 #' @param X Data matrix / Data frame
-#' @param w Weight that given to each observation. 
+#' @param w Weight that given to each observation. Used in calculate cost function. 
 #' @param y Class label for data points in X, must be -1 or 1
 #' @examples
 #' 
@@ -17,14 +17,14 @@
 #'X<- mydata$S[,1:4]
 #'y <- mydata$y
 #'w <- rep(1/100,100)
-#'pars <- DecisionStump(X=X,w=w,y=y)
+#'pars <- decisionStump(X=X,w=w,y=y)
 #' 
 
 #consider factor!!!
 
 
 # given predictor matrix X, with label y, and weight of data. return weak learner pars(j,theta,m)
-DecisionStump <- function(X,w,y)
+decisionStump <- function(X,w,y)
 {
     if(class(w)!='matrix'){
         w <- as.matrix(w)

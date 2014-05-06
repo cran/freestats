@@ -1,13 +1,14 @@
-\name{DecisionStump}
-\alias{DecisionStump}
+\name{decisionStump}
+\alias{decisionStump}
 \title{Decision Stump Algorithm}
 \usage{
-DecisionStump(X, w, y)
+decisionStump(X, w, y)
 }
 \arguments{
   \item{X}{Data matrix / Data frame}
 
-  \item{w}{Weight that given to each observation.}
+  \item{w}{Weight that given to each observation. Used in
+  calculate cost function.}
 
   \item{y}{Class label for data points in X, must be -1 or
   1}
@@ -28,7 +29,7 @@ mydata <- fakedata(w=z,n=100)
 X<- mydata$S[,1:4]
 y <- mydata$y
 w <- rep(1/100,100)
-pars <- DecisionStump(X=X,w=w,y=y)
+pars <- decisionStump(X=X,w=w,y=y)
 }
 \author{
 Xiaoyao Yang

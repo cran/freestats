@@ -1,6 +1,6 @@
 \name{classify.pt}
 \alias{classify.pt}
-\title{Classify for perceptrain in package}
+\title{Classify for perceptrain result}
 \usage{
 \method{classify}{pt}(pars, dat)
 }

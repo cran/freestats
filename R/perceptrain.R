@@ -32,7 +32,7 @@ perceptrain<-function(S,y,alpha_k=1,endcost=0){
     Z_history<-matrix(0,0,ncol=d+1)
     
     NumofIteration=0
-    Cost.gradient=1000
+    Cost.gradient=10000
     while (sum(Cost.gradient^2) > endcost){
         index1 <- classify.pti(S,z)!=y
         x.matrix -> cost.temp

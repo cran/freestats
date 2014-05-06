@@ -31,7 +31,7 @@ mydata <- fakedata(w=z,n=100)
 X<- mydata$S[,1:4]
 y <- mydata$y
 w <- rep(1/100,100)
-pars <- DecisionStump(X=X,w=w,y=y)
+pars <- decisionStump(X=X,w=w,y=y)
 classify(pars,X)
 }
 \author{
